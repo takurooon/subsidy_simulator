@@ -1,26 +1,52 @@
 # README
+***
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#助成金シミュレーター
+***
 
-Things you may want to cover:
+##概要
+年齢や治療費を入力すると、受けられる助成額や今後受けられる回数と金額がグラフで一目でわかります。
+***
 
-* Ruby version
+##コンセプト
+簡単に診断できるアプリ
+***
 
-* System dependencies
+##バージョン
+* RUby 2.3.0
+* Rails 5.1.6
+***
 
-* Configuration
+##機能一覧
+* ログイン機能
+  * SNSログイン機能
+* ユーザー登録機能
+  * 名前、メールアドレス、パスワード必須
+* シミュレーション入力機能
+* シミュレーション結果表示機能
+  * グラフ表示機能
+* メール送信機能
+* 助成金概要説明機能
+***
 
-* Database creation
+##カタログ設計
+https://docs.google.com/spreadsheets/d/1HSf6r6kQ_t4HBuH30tVDhH9rAGWu7SKJxgW33XMG6vI/edit#gid=1061587620
+***
 
-* Database initialization
+##テーブル定義
+https://docs.google.com/spreadsheets/d/1HSf6r6kQ_t4HBuH30tVDhH9rAGWu7SKJxgW33XMG6vI/edit#gid=2093582450
+***
 
-* How to run the test suite
+##画面遷移図
+https://docs.google.com/spreadsheets/d/1HSf6r6kQ_t4HBuH30tVDhH9rAGWu7SKJxgW33XMG6vI/edit#gid=1410016945
+***
 
-* Services (job queues, cache servers, search engines, etc.)
+##画面ワイヤーフレーム
+https://docs.google.com/spreadsheets/d/1HSf6r6kQ_t4HBuH30tVDhH9rAGWu7SKJxgW33XMG6vI/edit#gid=1815738831
+***
 
-* Deployment instructions
-
-* ...
-# te
-# subsidy_simulator
+##使用予定gem
+* device
+* omuniauth-twitter
+* chartkick
+***
