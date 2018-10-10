@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root 'simulators#index'
+
   devise_for :users
 
   resources :user, only: [:new, :create, :show]
