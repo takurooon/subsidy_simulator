@@ -62,6 +62,7 @@ class SimulatorsController < ApplicationController
     limit = upper_limit - used_count
     @remain = limit - 1
     @actual_cost = pay - subsidy
+    @articles = {"April 2018" => 1, "May 2018" => 5}
 
     if @remain < 0
       @remain = 0

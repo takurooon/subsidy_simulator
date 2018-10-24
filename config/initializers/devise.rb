@@ -291,4 +291,7 @@ Devise.setup do |config|
   # ↓herokuデプロイ時にエラーが出たので追加
   config.secret_key = 'secret_key'
 
+  # ↓TwitterのAPI
+  config.omniauth :twitter, 'AITWcX6SengVBE46EJm9hKjsE', 'c6JFx1NUccluEUFhjmzIsMrTtY0Tds0axJwdixkPIfXXgQrGGg'
+
 end

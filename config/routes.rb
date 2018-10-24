@@ -2,6 +2,10 @@ Rails.application.routes.draw do
 
   root 'simulators#index'
 
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
+
   devise_for :users
 
   resources :user, only: [:new, :create, :show]
