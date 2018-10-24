@@ -69,3 +69,5 @@ gem 'chartable'
 
 # フォントawesome
 gem 'font-awesome-rails'
+
+gem 'dotenv-rails'
