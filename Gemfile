@@ -67,7 +67,11 @@ gem 'mini_magick'
 gem "chartkick"
 gem 'chart-js-rails'
 
+# js変数
+gem 'gon', '~> 6.2.0'
+
 # フォントawesome
 gem 'font-awesome-rails'
 
+# 環境変数
 gem 'dotenv-rails'

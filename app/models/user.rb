@@ -7,7 +7,7 @@ class User < ApplicationRecord
      user = User.where(uid: auth.uid, provider: auth.provider).first
 
      unless user
-       user = User.create(
+       user = User.new(
          uid:      auth.uid,
          provider: auth.provider,
          email:    User.dummy_email(auth),
@@ -15,6 +15,8 @@ class User < ApplicationRecord
          name: auth[:info][:nickname],
          icon: auth[:info][:image]
        )
+       user.skip_confirmation!
+       user.save
      end
 
      user

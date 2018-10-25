@@ -22,6 +22,7 @@ class SimulatorsController < ApplicationController
     limit = upper_limit - used_count
     @remain = limit - 1
     @actual_cost = pay - subsidy
+    gon.data = []
 
     if @remain < 0
       @remain = 0
