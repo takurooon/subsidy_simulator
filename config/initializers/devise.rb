@@ -292,7 +292,6 @@ Devise.setup do |config|
   config.secret_key = 'secret_key'
 
   # ↓TwitterのAPI
-  # config.omniauth :twitter, 'AITWcX6SengVBE46EJm9hKjsE', 'c6JFx1NUccluEUFhjmzIsMrTtY0Tds0axJwdixkPIfXXgQrGGg'
   config.omniauth :twitter, ENV['TWITTER_CONSUMER_KEY'], ENV['TWITTER_CONSUMER_SECRET']
 
 end

@@ -65,7 +65,7 @@ gem 'mini_magick'
 
 # グラフ描画
 gem "chartkick"
-gem 'chartable'
+gem 'chart-js-rails'
 
 # フォントawesome
 gem 'font-awesome-rails'
