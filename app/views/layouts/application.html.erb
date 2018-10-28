@@ -10,7 +10,6 @@
   </head>
 
   <body>
-
     <header class="header">
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <a class="navbar-brand" href="/">HOME</a>
@@ -34,21 +33,20 @@
               <% end %>
             </li>
           </ul>
-
         </div>
       </nav>
     </header>
 
-    <% if notice %>
-      <p class="alert alert-notice"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert alert-error"><%= alert %></p>
-    <% end %>
-
-    <div class="container-fluid">
-      <%= yield %>
-    </div>
+      <% if notice %>
+        <p class="alert alert-notice"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert alert-error"><%= alert %></p>
+      <% end %>
+      
+      <div class="container-fluid">
+        <%= yield %>
+      </div>
 
     <!-- FOOTER -->
     <footer class="container mysimulator">

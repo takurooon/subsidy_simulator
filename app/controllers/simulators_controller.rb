@@ -1,5 +1,5 @@
 class SimulatorsController < ApplicationController
-  before_action :authenticate_user!, only: [:index]
+  before_action :authenticate_user!, only: [:calc]
 
   def home
   end
@@ -40,10 +40,11 @@ class SimulatorsController < ApplicationController
       session[:result] = @result
       session[:actual_cost] = @actual_cost
       session[:remain] = @remain
+
       if @actual_cost < 0
         @actual_cost = 0
       end
-        gon.data = [@result,@actual_cost]
+      gon.data = [@result,@actual_cost]
       render "simulators/result"
     else
       @result = subsidy
