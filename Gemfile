@@ -59,6 +59,9 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'
 
+# ソーシャルボタン
+gem 'bootstrap-social-rails'
+
 # 画像
 gem 'carrierwave'
 gem 'mini_magick'

@@ -1,16 +1,48 @@
-<h1>診断結果</h1>
-<p>あなたが受けられる助成額は<%= @result %>円です。</p>
+<div class="container"><br><br><br>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h3 class="display-5">★診断結果</h3><br>
+      <p>あなたが受けられる助成額は<%= @result %>円です。</p>
 
-<% if @actual_cost > 0 %>
-  <p>あなたの実質的な負担額は<%= @actual_cost %>円です。</p>
-<% else %>
-  <p>あなたの実質の負担額はありません。</p>
-<% end %>
+      <% if @actual_cost > 0 %>
+        <p>あなたの実質的な負担額は<%= @actual_cost %>円です。</p>
+      <% else %>
+        <p>あなたの実質の負担額はありません。</p>
+      <% end %>
 
-<p>今回助成金を申請した場合、今後あなたが42歳までに受けられる助成回数は残り<%= @remain %>回です。</p>
+      <p>今回助成金を申請した場合、今後あなたが42歳までに受けられる助成回数は残り<%= @remain %>回です。</p><br>
 
-<canvas id="myChart" width="200" height="100"></canvas>
-<script>draw_graph();</script>
+      <div class="row">
+        <div class="col-lg-8">
+          <canvas id="myChart"></canvas>
+          <script>
+          var ctx = document.getElementById('myChart').getContext('2d');
+          var myDoughnutChart = new Chart(ctx, {
+              type: 'doughnut',
+              data: {
+                datasets: [{
+                    backgroundColor: ["#2ecc71","#3498db"],
+                    data: gon.data
+                }],
+                labels: [
+                    '助成額',
+                    '自己負担額',
+                ]
+              },
+              options:  {}
+          });
+          </script>
+        </div>
+        <div class="col-lg-4">
+        </div>
+      </div><br><br>
 
-
-<%= link_to 'メールで送る', '/simulators/send_mail' %>
+      <div class="simulator-button">
+        <%= link_to simulators_send_mail_path do %>
+          <button type="button" class="btn btn-outline-primary">結果をメールで送る</button>
+        <% end %>
+      </div><br>
+      <%= link_to '戻る', :back %>
+    </div>
+  </div>
+</div>

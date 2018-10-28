@@ -1,17 +1,26 @@
-<%= form_tag ({controller: :simulators, action: :result_under40}) do %>
+<div class="container"><br><br><br>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h3 class="display-5">条件を選択し、支払った医療費を入力して下さい。</h3><br><br>
 
-  <p>これまでに助成を受けた回数を入力して下さい。</p>
-    <%= select_tag 'used_count', options_for_select([["0回", "0"],["1回", "1"], ["2回", "2"],["3回", "3"], ["4回", "4"], ["5回", "5"], ["6回以上", "6"]]) %>
+      <%= form_tag ({controller: :simulators, action: :result_under40}) do %>
+        <p>これまでに助成を受けた回数を入力して下さい。</p>
+          <%= select_tag 'used_count', options_for_select([["0回", "0"],["1回", "1"], ["2回", "2"],["3回", "3"], ["4回", "4"], ["5回", "5"], ["6回以上", "6"]]) %><br><br>
 
-  <p>A治療を受けた回数を入力して下さい。</p>
-    <%= select_tag 'collecting_eggs', options_for_select([["0回", "0"],["1回", "1"], ["2回", "2"],["3回", "3"], ["4回", "4"], ["5回", "5"], ["6回以上", "6"]]) %>
+        <p>A治療を受けた回数を入力して下さい。</p>
+          <%= select_tag 'collecting_eggs', options_for_select([["0回", "0"],["1回", "1"], ["2回", "2"],["3回", "3"], ["4回", "4"], ["5回", "5"], ["6回以上", "6"]]) %><br><br>
 
-  <p>B治療を受けた回数を入力して下さい。</p>
-    <%= select_tag 'porting_eggs', options_for_select([["0回", "0"],["1回", "1"], ["2回", "2"],["3回", "3"], ["4回", "4"], ["5回", "5"], ["6回以上", "6"]]) %>
+        <p>B治療を受けた回数を入力して下さい。</p>
+          <%= select_tag 'porting_eggs', options_for_select([["0回", "0"],["1回", "1"], ["2回", "2"],["3回", "3"], ["4回", "4"], ["5回", "5"], ["6回以上", "6"]]) %><br><br>
 
-  <p>これまでに支払った医療費を入力して下さい。</p>
-    <%= number_field_tag :pay %>
+        <p>これまでに支払った医療費を入力して下さい。</p>
+          <%= number_field_tag :pay %>
 
-  <%= submit_tag '診断' %>
+        <%= submit_tag '診断する' %>
+      <% end %>
 
-<% end %>
+      <%= link_to '戻る', :back %>
+
+    </div>
+  </div>
+</div>

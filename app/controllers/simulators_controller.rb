@@ -1,8 +1,13 @@
 class SimulatorsController < ApplicationController
   before_action :authenticate_user!, only: [:index]
 
+  def home
+  end
 
-  def index
+  def description
+  end
+
+  def calc
   end
 
   def under40
@@ -22,7 +27,6 @@ class SimulatorsController < ApplicationController
     limit = upper_limit - used_count
     @remain = limit - 1
     @actual_cost = pay - subsidy
-    gon.data = []
 
     if @remain < 0
       @remain = 0
@@ -36,12 +40,20 @@ class SimulatorsController < ApplicationController
       session[:result] = @result
       session[:actual_cost] = @actual_cost
       session[:remain] = @remain
+      if @actual_cost < 0
+        @actual_cost = 0
+      end
+        gon.data = [@result,@actual_cost]
       render "simulators/result"
     else
       @result = subsidy
       session[:result] = @result
       session[:actual_cost] = @actual_cost
       session[:remain] = @remain
+      if @actual_cost < 0
+        @actual_cost = 0
+      end
+      gon.data = [@result,@actual_cost]
       render "simulators/result"
     end
   end
@@ -63,7 +75,6 @@ class SimulatorsController < ApplicationController
     limit = upper_limit - used_count
     @remain = limit - 1
     @actual_cost = pay - subsidy
-    @articles = {"April 2018" => 1, "May 2018" => 5}
 
     if @remain < 0
       @remain = 0
@@ -77,14 +88,26 @@ class SimulatorsController < ApplicationController
       session[:result] = @result
       session[:actual_cost] = @actual_cost
       session[:remain] = @remain
+      if @actual_cost < 0
+        @actual_cost = 0
+      end
+        gon.data = [@result,@actual_cost]
       render "simulators/result"
     else
       @result = subsidy
       session[:result] = @result
       session[:actual_cost] = @actual_cost
       session[:remain] = @remain
+      if @actual_cost < 0
+        @actual_cost = 0
+      end
+      gon.data = [@result,@actual_cost]
       render "simulators/result"
     end
+  end
+
+  def result_nomatch
+    render 'simulators/result_nomatch'
   end
 
   def send_mail
