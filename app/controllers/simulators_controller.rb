@@ -1,17 +1,13 @@
 class SimulatorsController < ApplicationController
   before_action :authenticate_user!, except: [:home, :description]
 
-  def home
-  end
+  def home; end
 
-  def description
-  end
+  def description; end
 
-  def calc
-  end
+  def calc; end
 
-  def under40
-  end
+  def under40; end
 
   def result_under40
     used_count = params[:used_count].to_i
@@ -67,8 +63,7 @@ class SimulatorsController < ApplicationController
     end
   end
 
-  def under43
-  end
+  def under43; end
 
   def result_under43
     used_count = params[:used_count].to_i
