@@ -3,7 +3,7 @@
     <div class="container">
       <h3 class="display-5">条件を選択し、支払った医療費を入力して下さい。</h3><br><br>
 
-      <%= form_tag ({controller: :simulators, action: :result_under43}) do %>
+      <%= form_tag(simulators_result_under43_path, { method: :get }) do %>
 
         <p>これまでに助成を受けた回数を入力して下さい。</p>
           <%= select_tag 'used_count', options_for_select([["0回", "0"],["1回", "1"], ["2回", "2"],["3回以上", "3"]]) %><br><br>

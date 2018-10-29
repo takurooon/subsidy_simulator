@@ -92,15 +92,15 @@ body {
 
 /* Simulators view CSS
 -------------------------------------------------- */
-.mysimulator {
+/* .mysimulator {
   margin-top: 50px;
-}
+} */
 
 .simulator-button {
   margin: auto;
   text-align: center;
 }
 
-.description {
-  margin-bottom: 50px;
+.alert {
+  color: red;
 }

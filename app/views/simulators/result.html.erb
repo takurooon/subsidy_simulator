@@ -2,10 +2,16 @@
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
       <h3 class="display-5">★診断結果</h3><br>
-      <p>あなたが受けられる助成額は<%= @result %>円です。</p>
+
+      <% if @result > 0 %>
+        <p>あなたが受けられる助成額は<%= @result.to_s(:currency) %>です。</p>
+        <p>助成金の申請期限は<%= @date %>年3月31日までです（同日の消印有効）</p>
+      <% else %>
+        <p>あなたが受けられる助成金はありません。</p>
+      <% end %>
 
       <% if @actual_cost > 0 %>
-        <p>あなたの実質的な負担額は<%= @actual_cost %>円です。</p>
+        <p>あなたの実質的な負担額は<%= @actual_cost.to_s(:currency) %>です。</p>
       <% else %>
         <p>あなたの実質の負担額はありません。</p>
       <% end %>

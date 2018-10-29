@@ -6,7 +6,7 @@
     <%= include_gon %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link href="css/carousel.css" rel="stylesheet">
+    <link href="/css/carousel.css" rel="stylesheet">
   </head>
 
   <body>
@@ -38,21 +38,24 @@
     </header>
 
       <% if notice %>
-        <p class="alert alert-notice"><%= notice %></p>
+        <div class="container-fluid">
+          <p class="alert alert-notice"><%= notice %></p>
+        </div>
       <% end %>
       <% if alert %>
-        <p class="alert alert-error"><%= alert %></p>
+        <div class="container-fluid">
+          <p class="alert alert-error"><%= alert %></p>
+        </div>
       <% end %>
-      
+
       <div class="container-fluid">
         <%= yield %>
       </div>
 
     <!-- FOOTER -->
     <footer class="container mysimulator">
-      <p class="float-right"><a href="#">Back to top</a></p>
+      <p class="float-right"><%= link_to 'Back to Top', root_path %></p>
       <p>&copy; 2018 Takuro Kodama.</p>
     </footer>
-
   </body>
 </html>

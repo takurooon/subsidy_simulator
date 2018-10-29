@@ -5,13 +5,6 @@
 
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-        <% if notice %>
-          <p class="alert alert-notice"><%= notice %></p>
-        <% end %>
-        <% if alert %>
-          <p class="alert alert-error"><%= alert %></p>
-        <% end %>
-
         <div class="field">
           <%= f.label :email %><br />
           <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
