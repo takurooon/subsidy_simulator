@@ -1,16 +1,18 @@
-<div class="container"><br><br><br>
+<div class="container">
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
-      <h1 class="display-5">ログイン</h1><br>
 
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-        <div class="field">
+      <div class="form-wrapper">
+        <h1>ログイン</h1>
+        <form>
+        <div class="form-item">
           <%= f.label :email %><br />
           <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
         </div><br>
 
-        <div class="field">
+        <div class="form-item">
           <%= f.label :password %><br />
           <%= f.password_field :password, autocomplete: "current-password" %>
         </div>
@@ -22,10 +24,10 @@
           </div><br>
         <% end -%>
 
-        <div class="actions">
+        <div class="button-panel">
           <%= f.submit "ログイン" %>
         </div><br>
-
+      </form
       <% end %>
 
       <%= link_to user_twitter_omniauth_authorize_path do
@@ -38,7 +40,7 @@
       <% end %>
 
       <%= link_to '戻る', :back %>
-
+      </div>
     </div>
   </div>
 </div>
