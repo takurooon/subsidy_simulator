@@ -19,7 +19,7 @@
       <p>今回助成金を申請した場合、今後あなたが42歳までに受けられる助成回数は残り<%= @remain_subsidy %>回です。</p><br>
 
       <div class="row">
-        <div class="col-lg-8">
+        <div class="col-lg-12">
           <canvas id="myChart"></canvas>
           <script>
           var ctx = document.getElementById('myChart').getContext('2d');
@@ -39,16 +39,14 @@
           });
           </script>
         </div>
-        <div class="col-lg-4">
-        </div>
       </div><br><br>
 
       <div class="simulator-button">
         <%= link_to simulators_send_mail_path do %>
           <button type="button" class="btn btn-outline-primary">結果をメールで送る</button>
-        <% end %>
-      </div><br>
-      <%= link_to '戻る', :back %>
+        <% end %><br><br>
+        <%= link_to '戻る', :back %>
+      </div>
     </div>
   </div>
 </div>

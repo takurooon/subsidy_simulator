@@ -17,11 +17,9 @@
         <p>これまでに支払った医療費を入力して下さい。</p>
           <%= number_field_tag :pay %>
 
-        <%= submit_tag '診断する' %>
+        <%= submit_tag '診断する' %><br><br>
+        <%= link_to '戻る', :back %>
       <% end %>
-
-      <%= link_to '戻る', :back %>
-
     </div>
   </div>
 </div>

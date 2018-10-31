@@ -102,3 +102,7 @@ body {
 .alert {
   color: red;
 }
+
+.mail {
+	text-align: left;
+}
